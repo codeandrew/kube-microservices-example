@@ -14,9 +14,17 @@ To run all yml files
 To check status
 ` kubectl get all `
 
+## Delete
+To Delete pods
+` kubectl delete po --all`
+
+
 ### Shorthands
 pod = po
 `kubectl describe po name`
 
 service = svc
 `kubectl describe svc name`
+
+replicaSet = rs
+`kubectl describe rs name`

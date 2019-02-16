@@ -1,8 +1,8 @@
 # Kubernetes Microservices
 > Using Minikube
 
-## Feature : ReplicaSet
-![image](docs/replicaSets.png)
+## Feature : Deployment
+![image](docs/deployment.png)
 
 
 ## Get Started

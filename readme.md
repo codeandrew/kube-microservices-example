@@ -1,6 +1,10 @@
 # Kubernetes Microservices
 > Using Minikube
 
+## Feature : ReplicaSet
+![image](docs/replicaSets.png)
+
+
 ## Get Started
 Start Minikube
 ` minikube start`

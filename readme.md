@@ -13,3 +13,10 @@ To run all yml files
 
 To check status
 ` kubectl get all `
+
+### Shorthands
+pod = po
+`kubectl describe po name`
+
+service = svc
+`kubectl describe svc name`

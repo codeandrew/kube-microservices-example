@@ -2,6 +2,10 @@
 > Using Minikube
 
 ## Feature : Deployment
+> Deployment handles Replica,
+
+> Replica handles Pods
+
 ![image](docs/deployment.png)
 
 
@@ -32,3 +36,12 @@ service = svc
 
 replicaSet = rs
 `kubectl describe rs name`
+
+---
+### Emergency Rollback
+
+To check history
+` kubectl rollout history deploy webapp `
+
+To check status
+` kubectl rollout status deploy webapp `

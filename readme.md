@@ -26,6 +26,9 @@ To check status
 To Delete pods
 ` kubectl delete po --all`
 
+** To delete every resources in a file **  
+`kubectl delete -f file.yml`
+
 
 ### Shorthands
 pod = po

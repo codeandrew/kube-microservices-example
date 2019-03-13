@@ -15,7 +15,7 @@ spec:
 
         spec:
             containers:
-            - name: webapp
+            - name: queue
               image: richardchesterwood/k8s-fleetman-queue:release1
 
 ---
@@ -37,8 +37,33 @@ spec:
 
         spec:
             containers:
-            - name: webapp
+            - name: position-tracker
               image: richardchesterwood/k8s-fleetman-position-simulator:release1
+              env:
+              - name: SPRING_PROFILES_ACTIVE
+                value: production-microservice
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: position-tracker
+spec:
+    selector:
+        matchLabels:
+            app: position-tracker
+    replicas: 1
+
+    template: # Temlate for Pods
+        metadata:
+            labels:
+              app: position-tracker
+
+        spec:
+            containers:
+            - name: position-tracker
+              image: richardchesterwood/k8s-fleetman-position-tracker:release1
               env:
               - name: SPRING_PROFILES_ACTIVE
                 value: production-microservice

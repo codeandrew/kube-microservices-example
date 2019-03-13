@@ -48,3 +48,49 @@ To check history
 
 To check status
 ` kubectl rollout status deploy webapp `
+
+
+---
+
+## NOTES :
+
+### Services
+** Example **
+
+Types:
+- NodePort
+> For Exposing it externally (like browser)  
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: fleetman-position-tracker
+spec:
+    selector:
+        app: position-tracker
+    ports:
+    - name: http
+      port: 8080 # Container PORT
+      nodePort: 30020 # External PORT
+    type: NodePort
+
+```
+
+- ClusterIP
+> For internal Use only, and you cannot specify a `nodePort`
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: fleetman-position-tracker
+spec:
+    selector:
+        app: position-tracker
+    ports:
+    - name: http
+      port: 8080 # Container PORT
+    type: ClusterIP
+
+```

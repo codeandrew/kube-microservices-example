@@ -90,3 +90,26 @@ spec:
               env:
               - name: SPRING_PROFILES_ACTIVE
                 value: production-microservice
+
+---
+# WEBAPP
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: webapp
+spec:
+    selector:
+        matchLabels:
+            app: webapp
+    replicas: 1
+    template: # Temlate for Pods
+        metadata:
+            labels:
+              app: webapp
+        spec:
+            containers:
+            - name: webapp
+              image: richardchesterwood/k8s-fleetman-webapp-angular:release1
+              env:
+              - name: SPRING_PROFILES_ACTIVE
+                value: production-microservice

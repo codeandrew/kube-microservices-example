@@ -18,7 +18,7 @@ spec:
     type: NodePort
 
 ---
-
+# QUEUE
 apiVersion: v1
 kind: Service
 metadata:
@@ -36,6 +36,21 @@ spec:
       port: 8161 # Container PORT
       nodePort: 30010 # External PORT
 
+    - name: endpoint
+      port: 61616
+
     type: NodePort
 
 ---
+# POSTITION TRACKER
+apiVersion: v1
+kind: Service
+metadata:
+    name: fleetman-position-tracker
+spec:
+    selector:
+        app: position-tracker
+    ports:
+    - name: http
+      port: 8080 # Container PORT
+    type: ClusterIP

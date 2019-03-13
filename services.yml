@@ -36,6 +36,7 @@ spec:
       port: 8161 # Container PORT
       nodePort: 30010 # External PORT
 
-    type: NodePort
+    - name: endpoint
+      port: 61616
 
----
+    type: NodePort

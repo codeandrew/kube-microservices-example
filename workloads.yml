@@ -17,3 +17,28 @@ spec:
             containers:
             - name: webapp
               image: richardchesterwood/k8s-fleetman-queue:release1
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: position-simulator
+spec:
+    selector:
+        matchLabels:
+            app: position-simulator
+    replicas: 1
+
+    template: # Temlate for Pods
+        metadata:
+            labels:
+              app: position-simulator
+
+        spec:
+            containers:
+            - name: webapp
+              image: richardchesterwood/k8s-fleetman-position-simulator:release1
+              env:
+              - name: SPRING_PROFILES_ACTIVE
+                value: production-microservice

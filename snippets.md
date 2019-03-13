@@ -21,3 +21,9 @@ here is the response:
 ![image](docs/service-discovery-kubectl-getall.png)
 
 Service database is at `10.105.215.194`
+
+### Inspecting the Logs of the Pod
+
+`kubectl logs podname-hash123`  
+or
+`kubectl logs pod/podname-hash123`  

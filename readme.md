@@ -94,3 +94,19 @@ spec:
     type: ClusterIP
 
 ```
+
+---
+## Troubleshooting  
+> Here are some of the troubles that I have experienced during development/deployment
+
+If minikube is not starting
+```
+minikube delete
+minikube start
+```
+
+If the problem persist, try uninstalling and re-installing
+```
+brew cask uninstall minikube
+brew cask install minikube
+```
